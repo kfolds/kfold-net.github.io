@@ -2,23 +2,28 @@
 <html>
 <head>
 <title>kfold</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Karla:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <div id="header">
         <div class="inner">
-        <h1>kfold</h1>
+        <h1><a href="/">kfold</a></h1>
         </div>
     </div>
     <div id="content">
-        <div class="inner">
-        <div id="article">
         <div id="title">
-        <h1>introduction to baka</h1>
-        <p><small>a programming language.</small></p>
-        <p><small>published 2021-12-11</small></p>
+            <div class="inner">
+                <h1>introduction to baka</h1>
+                <p><small>a programming language.</small></p>
+                <p><small>published 2021-12-11</small></p>
+            </div>
         </div>
-        <p>awhile back i had the thought that "baka" would be a funny name for a programming language. months
+        <div id="article">
+            <div class="inner">    
+                <p>awhile back i had the thought that "baka" would be a funny name for a programming language. months
 later, i've started working on it as a silly pet project and excuse to get into compiler design.
 baka is meant to be a simple low-level language with some nice features like type safety and
 compile-time code execution. currently the scope of features i'd like to include is nebulous, so
@@ -33,12 +38,13 @@ main :: (argc: i32, argv: []const u8) -&gt; !void {
     std.print(&quot;hello uwu\n&quot;);
 }
 </code></pre>
-        </div>
+<p>neat!</p>
+            </div>
         </div>
     </div>
     <div id="footer">
         <div class="inner">
-        <p><a href="/">home</a>&nbsp;|&nbsp;generated at 2021-12-11, 20:42:06.</p>
+        <p><a href="/">home</a>&nbsp;|&nbsp;generated at 2021-12-12, 21:52:13.</p>
         </div>
     </div>
 </body>

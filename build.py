@@ -12,10 +12,20 @@ import markdown
 
 jenv = jinja2.Environment(loader=jinja2.FileSystemLoader("static"))
 
+CONFIG_PATH = "config.json"
 MANIFEST_PATH = "manifest.json"
+
 CONTENT_PATH = "content"
 TEMPLATE_PATH = "static"
-PUBLIC_PATH = "www"
+PUBLIC_PATH = "docs"
+
+if os.path.exists(CONFIG_PATH):
+    with open(CONFIG_PATH, "r") as f:
+        cfg = json.load(f)
+
+        PUBLIC_PATH = cfg.get("PUBLIC_PATH", PUBLIC_PATH)
+        TEMPLATE_PATH = cfg.get("TEMPLATE_PATH", TEMPLATE_PATH)
+        CONTENT_PATH = cfg.get("CONTENT_PATH", CONTENT_PATH)
 
 
 def hash_file(fname):
@@ -110,9 +120,7 @@ def gen_toc(doc_props):
             }
             for k, v in doc_props.items()
         ], key=lambda x: ["date"]),
-    }
-
-    print(context)
+    } if len(doc_props) != 0 else dict()
 
     html = template.render(context)
 
@@ -121,7 +129,7 @@ def gen_toc(doc_props):
 
 
 def main():
-    print("building kfold.net...")
+    print("building site...")
 
     if not os.path.exists(PUBLIC_PATH):
         os.mkdir(PUBLIC_PATH)
@@ -168,19 +176,18 @@ def main():
         + f"; {len(del_keys)} deletion" + ("s" if len(del_keys) != 1 else "") + "."
     )
 
-    if len(new_keys) + len(upd_keys) == 0:
-        print("nothing to do; exiting.")
-        exit()
-
-    doc_props = gen_pages(new_keys | upd_keys)
-    doc_props = {
-        **{k: v for k, v in manifest.items() if k not in del_keys},
-        **{doc["id"]: {"hash": found_hashes[doc["id"]], **doc} for doc in doc_props},
-    }
-
     if len(del_keys) != 0:
         print(f"deleting {len(del_keys)} pages.")
         del_pages(del_keys)
+
+    if len(new_keys) + len(upd_keys) == 0:
+        doc_props = gen_pages(new_keys | upd_keys)
+        doc_props = {
+            **{k: v for k, v in manifest.items() if k not in del_keys},
+            **{doc["id"]: {"hash": found_hashes[doc["id"]], **doc} for doc in doc_props},
+        }
+    else:
+        doc_props = dict()
 
     print("generating table of contents.")
     gen_toc(doc_props)

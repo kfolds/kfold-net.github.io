@@ -21,3 +21,4 @@ main :: (argc: i32, argv: []const u8) -> !void {
 }
 ```
 
+neat!

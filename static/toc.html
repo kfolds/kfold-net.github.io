@@ -2,27 +2,37 @@
 <html>
 <head>
 <title>kfold</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Karla:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <div id="header">
         <div class="inner">
-        <h1>kfold</h1>
+        <h1><a href="/">kfold</a></h1>
         </div>
     </div>
     <div id="content">
-        <div class="inner">
-        <p>welcome.
-    <div id="toc">
-    {% for item in toc %}
-    <div class="article-ref">
-        <small>{{ item.date }}</small>
-        <a href="{{ item.url }}">{{ item.title }}</a>
-        {% if item.desc is defined %}: {{ item.desc }}{% endif %}
-    </div>
-    {% endfor %}
-    </div>
-    </div>
+        <div id="title">
+            <div class="inner">
+                <h3>hi, i'm Mia.</h3>
+                <small>
+                <p>i like to make things.</p>
+                </small>
+            </div>
+        </div>
+
+        <div id="toc">
+            <div class="inner">
+            {% for item in toc %}
+                <div class="article-ref">
+                    <small>{{ item.date }}</small>:
+                    <a href="{{ item.url }}">{{ item.title }}</a>{% if item.desc is defined %}: {{ item.desc }}{% endif %}
+                </div>
+            {% endfor %}
+            </div>
+        </div>
     </div>
 </body>
 </html>

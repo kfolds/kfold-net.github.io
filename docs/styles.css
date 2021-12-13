@@ -1,43 +1,66 @@
-#content {
-    margin: 1.5rem 1rem 0 1rem;
-}
-
-#article {
-
-}
-
-#article #title {
-    line-height: 0.2rem;
-    margin: 0 0 2rem 0;
-}
-
-#header {
-    color: rgb(22, 24, 33);
-    background-color: rgb(210, 212, 222);
-    line-height: 0.4rem;
-    margin: 0;
-    padding: 0.01rem 1rem;
-}
-
 body {
     background-color: rgb(22, 24, 33);
     color: rgb(210, 212, 222);
-    font-family: monospace;
+    font-family: "Karla", sans-serif;
+    font-size: 1rem;
     margin: 0 auto;
     padding: 0;
-}
-
-#footer {
-    border-top: solid 1px #aaa;
-    margin: 2rem 0 0 0;
-    padding: 0 1rem;
 }
 
 a {
     color: rgb(149, 196, 206);
 }
 
+h1 a {
+    text-decoration: none;
+    color: rgb(22, 24, 33);
+}
+
+pre {
+    background-color: rgb(15, 17, 23);
+    color: rgb(132, 160, 198);
+    font-family: "Inconsolata";
+    padding: 0.8rem 1rem;
+}
+
+#header {
+    color: rgb(22, 24, 33);
+    background-color: rgb(210, 212, 222);
+    padding: 0.25rem 1rem;
+}
+
+#header h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#content {
+
+}
+
+#article {
+
+}
+
+#content #title {
+    background-color: rgb(15, 17, 23);
+    margin: 0 0 1rem 0;
+    padding: 1.5rem 0;
+}
+
+#content #title p, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#footer {
+    border-top: none 2px rgb(15, 17, 23);
+    margin: 2rem 0 0 0;
+    padding: 0 1rem;
+}
+
 .inner {
     margin: 0 auto;
-    max-width: 560px;
+    max-width: 720px;
 }
+

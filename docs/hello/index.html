@@ -2,23 +2,28 @@
 <html>
 <head>
 <title>kfold</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Karla:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <div id="header">
         <div class="inner">
-        <h1>kfold</h1>
+        <h1><a href="/">kfold</a></h1>
         </div>
     </div>
     <div id="content">
-        <div class="inner">
-        <div id="article">
         <div id="title">
-        <h1>hello kfold</h1>
-        <p><small>some potentially interesting information.</small></p>
-        <p><small>published 2021-12-11</small></p>
+            <div class="inner">
+                <h1>hello kfold</h1>
+                <p><small>some potentially interesting information.</small></p>
+                <p><small>published 2021-12-11</small></p>
+            </div>
         </div>
-        <p>static site generators are fairly popular for blogging these days, which is generally a good thing
+        <div id="article">
+            <div class="inner">    
+                <p>static site generators are fairly popular for blogging these days, which is generally a good thing
 considering that most small blogs don't need a large backend to function. however, most of the tools
 available for generating static sites are too bloated for my liking. to that end, i wrote a simple
 site generator in python that converts a directory structure of markdown files into a proper blog.
@@ -36,12 +41,12 @@ in order to generate proper pages for each post. each post's final HTML page is 
 subdirectory under the site's public directory. deleted posts are then removed from the public
 directory.</p>
 <p>finally, a table of contents is generated (again using Jinja2) to tie everything together, then placed into the site's public directory as the index.</p>
-        </div>
+            </div>
         </div>
     </div>
     <div id="footer">
         <div class="inner">
-        <p><a href="/">home</a>&nbsp;|&nbsp;generated at 2021-12-11, 20:42:06.</p>
+        <p><a href="/">home</a>&nbsp;|&nbsp;generated at 2021-12-12, 21:52:13.</p>
         </div>
     </div>
 </body>

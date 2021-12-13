@@ -180,7 +180,7 @@ def main():
         print(f"deleting {len(del_keys)} pages.")
         del_pages(del_keys)
 
-    if len(new_keys) + len(upd_keys) == 0:
+    if len(new_keys) + len(upd_keys) != 0:
         doc_props = gen_pages(new_keys | upd_keys)
         doc_props = {
             **{k: v for k, v in manifest.items() if k not in del_keys},

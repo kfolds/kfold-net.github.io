@@ -8,7 +8,7 @@ available for generating static sites are too bloated for my liking. to that end
 site generator in python that converts a directory structure of markdown files into a proper blog.
 this page and others on this site were produced by my generator!
 
-# how it works
+## how it works
 the tool scans a content directory containing a set of subdirectories, each containing an `index.md`
 file alongside any other files to be pushed to the public directory. using the name of each subdirectory as a (kinda lousy) primary key to refer to posts, the tool then looks at a manifest table to
 determine which posts are new, have been deleted, and have been updated. updates are further
